@@ -1,6 +1,6 @@
 _bakeresourcecache/
 *_bakeresourcecache.vpk
 tools_asset_info.bin
-code/Properties/*
+code/Properties/
 accesslist.txt
 code/*.csproj
