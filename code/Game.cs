@@ -9,12 +9,12 @@ using Equivalent.UI;
 
 namespace Equivalent {
 
-	public partial class MinimalGame : Game {
-		public MinimalGame() {
+	public partial class EquivalentGame : Game {
+		public EquivalentGame() {
 			if(IsServer) {
 				Log.Info("[SV] Gamemode created");
 
-				_ = new MinimalHudEntity();
+				_ = new EquivalentHud();
 			}
 
 			if(IsClient) {

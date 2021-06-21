@@ -1,8 +1,8 @@
 using Sandbox.UI;
 
 namespace Equivalent.UI {
-	public partial class MinimalHudEntity : Sandbox.HudEntity<RootPanel> {
-		public MinimalHudEntity() {
+	public partial class EquivalentHud : Sandbox.HudEntity<RootPanel> {
+		public EquivalentHud() {
 			if(!IsClient) return;
 			RootPanel.AddChild<ChatBox>();
 			RootPanel.AddChild<NameTags>();
