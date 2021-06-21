@@ -4,3 +4,4 @@ tools_asset_info.bin
 code/Properties/
 accesslist.txt
 code/*.csproj
+code/obj/
