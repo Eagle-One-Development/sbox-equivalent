@@ -8,10 +8,13 @@ namespace Equivalent.Player {
 		TimeSince timeSinceDied;
 		public float RespawnTime = 1;
 
-		public virtual void InitialRespawn() {
+		[Net]
+		public float MaxHealth { get; set; }
 
+		public virtual void InitialRespawn() {
 			Respawn();
 		}
+
 		public override void Respawn() {
 			SetModel("models/citizen/citizen.vmdl");
 
@@ -24,7 +27,17 @@ namespace Equivalent.Player {
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
 
-			base.Respawn();
+			Host.AssertServer();
+
+			LifeState = LifeState.Alive;
+			Health = MaxHealth;
+			Velocity = Vector3.Zero;
+			WaterLevel.Clear();
+
+			CreateHull();
+
+			Game.Current?.MoveToSpawnpoint(this);
+			ResetInterpolation();
 		}
 
 		public override void Simulate(Client cl) {
