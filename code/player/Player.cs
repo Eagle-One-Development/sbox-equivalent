@@ -9,7 +9,7 @@ namespace Equivalent.Player {
 		public float RespawnTime = 1;
 
 		[Net]
-		public float MaxHealth { get; set; }
+		public float MaxHealth { get; set; } = 100;
 
 		public virtual void InitialRespawn() {
 			Respawn();
