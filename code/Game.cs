@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using Equivalent.Player;
 using Equivalent.UI;
+using Equivalent.Util;
 
 namespace Equivalent {
 
@@ -29,6 +30,12 @@ namespace Equivalent {
 			client.Pawn = player;
 
 			player.InitialRespawn();
+		}
+
+		public override void DoPlayerSuicide(Client cl) {
+			if(cl.Pawn == null) return;
+
+			cl.Pawn.Kill();
 		}
 	}
 }
