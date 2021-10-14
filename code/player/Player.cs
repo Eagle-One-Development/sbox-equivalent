@@ -52,6 +52,7 @@ namespace Equivalent.Player {
 			controller?.Simulate(cl, this, GetActiveAnimator());
 
 			SimulateActiveChild(cl, ActiveChild);
+
 		}
 
 		public override void OnKilled() {
