@@ -12,6 +12,11 @@ namespace Equivalent {
 			Sandbox.Log.Info($"[{(Host.IsClient ? "CL" : "SV")}] {obj}");
 		}
 
+		public static void TraceResult(TraceResult traceResult, float duration = 0) {
+			if(!Debug.Enabled) return;
+			DebugOverlay.TraceResult(traceResult, duration);
+		}
+
 		public static void Sphere(Vector3 position, float radius, Color color = default, float duration = 0, bool depthTest = true) {
 			if(!Debug.Enabled) return;
 			DebugOverlay.Sphere(position, radius, color, depthTest, duration);
