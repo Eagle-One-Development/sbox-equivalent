@@ -27,8 +27,6 @@ namespace Equivalent.Player {
 			EnableHideInFirstPerson = true;
 			EnableShadowInFirstPerson = true;
 
-			Host.AssertServer();
-
 			LifeState = LifeState.Alive;
 			Health = MaxHealth;
 			Velocity = Vector3.Zero;
@@ -52,7 +50,6 @@ namespace Equivalent.Player {
 			controller?.Simulate(cl, this, GetActiveAnimator());
 
 			SimulateActiveChild(cl, ActiveChild);
-
 		}
 
 		public override void OnKilled() {
