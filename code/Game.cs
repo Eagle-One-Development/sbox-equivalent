@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 using Equivalent.Player;
 using Equivalent.UI;
-using Equivalent.Util;
 
 namespace Equivalent {
 

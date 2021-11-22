@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Sandbox;
 
-namespace Equivalent.Util {
+namespace Equivalent {
 	public static class ListExtension {
 		/// <summary>
 		/// Selects a random member contained within the given list.
@@ -13,7 +13,7 @@ namespace Equivalent.Util {
 		/// is empty.
 		/// </remarks>
 		public static T Random<T>(this IList<T> list) {
-			if (!list.Any())
+			if(!list.Any())
 				throw new InvalidOperationException("Cannot select a random member of an empty list!");
 
 			return list[Rand.Int(0, list.Count - 1)];
@@ -23,8 +23,7 @@ namespace Equivalent.Util {
 			try {
 				item = list.Random();
 				return true;
-			}
-			catch (InvalidOperationException) {
+			} catch(InvalidOperationException) {
 				item = default;
 				return false;
 			}
