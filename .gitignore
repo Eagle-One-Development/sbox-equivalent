@@ -25,3 +25,4 @@ omnisharp.json
 *.vpk
 *.vpcf_c
 *.fgd
+*.vpost_c
