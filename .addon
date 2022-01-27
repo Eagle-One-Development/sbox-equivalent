@@ -1,3 +1,13 @@
 {
-    "sharedassets": "*.*"
+  "SharedAssets": "*.*",
+  "Title": "Equivalent Base",
+  "Type": "game",
+  "Org": "local",
+  "Ident": "equivalent",
+  "Schema": 1,
+  "HasAssets": false,
+  "AssetsPath": "",
+  "HasCode": true,
+  "CodePath": "code",
+  "RootNamespace": "Sandbox"
 }
