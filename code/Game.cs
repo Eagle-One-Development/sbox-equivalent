@@ -11,15 +11,9 @@ namespace Equivalent {
 
 	public partial class EquivalentGame : Game {
 		public EquivalentGame() {
-			if(IsServer) {
-				Log.Info("[SV] Gamemode created");
-
+			Log.Debug("Game created");
+			if(IsServer)
 				_ = new EquivalentHud();
-			}
-
-			if(IsClient) {
-				Log.Info("[CL] Gamemode created");
-			}
 		}
 
 		public override void ClientJoined(Client client) {
