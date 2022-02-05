@@ -4,12 +4,11 @@ using System.Linq;
 
 namespace Equivalent.Player {
 	partial class EquivalentPlayer : Sandbox.Player {
+		// for respawning
+		[Net] public TimeSince TimeSinceDied { get; set; }
+		[Net] public float RespawnTime { get; set; } = 1;
 
-		TimeSince timeSinceDied;
-		public float RespawnTime = 1;
-
-		[Net]
-		public float MaxHealth { get; set; } = 100;
+		[Net] public float MaxHealth { get; set; } = 100;
 
 		public virtual void InitialRespawn() {
 			Respawn();
@@ -40,22 +39,20 @@ namespace Equivalent.Player {
 
 		public override void Simulate(Client cl) {
 			if(LifeState == LifeState.Dead) {
-				if(timeSinceDied > RespawnTime && IsServer) {
+				if(TimeSinceDied > RespawnTime && IsServer) {
 					Respawn();
 				}
 				return;
 			}
 
-			var controller = GetActiveController();
-			controller?.Simulate(cl, this, GetActiveAnimator());
-
+			GetActiveController()?.Simulate(cl, this, GetActiveAnimator());
 			SimulateActiveChild(cl, ActiveChild);
 		}
 
 		public override void OnKilled() {
 			Game.Current?.OnKilled(this);
 
-			timeSinceDied = 0;
+			TimeSinceDied = 0;
 			LifeState = LifeState.Dead;
 			StopUsing();
 
