@@ -1,12 +1,12 @@
 {
-  "SharedAssets": "*.*",
   "Title": "Equivalent Base",
   "Type": "game",
   "Org": "local",
   "Ident": "equivalent",
   "Schema": 1,
-  "HasAssets": false,
-  "AssetsPath": "",
+  "HasAssets": true,
+  "AssetsPath": "materials/ui/*",
+  "ResourcePaths": null,
   "HasCode": true,
   "CodePath": "code",
   "RootNamespace": "Sandbox"
