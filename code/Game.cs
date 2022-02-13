@@ -1,34 +1,30 @@
-using Sandbox;
-using Sandbox.UI.Construct;
-using System;
-using System.IO;
-using System.Threading.Tasks;
+global using Sandbox;
+global using System;
 
 using Equivalent.Player;
 using Equivalent.UI;
 
-namespace Equivalent {
+namespace Equivalent;
 
-	public partial class EquivalentGame : Game {
-		public EquivalentGame() {
-			Log.Debug("Game created");
-			if(IsServer)
-				_ = new EquivalentHud();
-		}
+public partial class EquivalentGame : Game {
+	public EquivalentGame() {
+		Log.Debug("Game created");
+		if(IsServer)
+			_ = new EquivalentHud();
+	}
 
-		public override void ClientJoined(Client client) {
-			base.ClientJoined(client);
+	public override void ClientJoined(Client client) {
+		base.ClientJoined(client);
 
-			var player = new EquivalentPlayer();
-			client.Pawn = player;
+		var player = new EquivalentPlayer();
+		client.Pawn = player;
 
-			player.InitialRespawn();
-		}
+		player.InitialRespawn();
+	}
 
-		public override void DoPlayerSuicide(Client cl) {
-			if(cl.Pawn == null) return;
+	public override void DoPlayerSuicide(Client cl) {
+		if(cl.Pawn == null) return;
 
-			cl.Pawn.Kill();
-		}
+		cl.Pawn.Kill();
 	}
 }
