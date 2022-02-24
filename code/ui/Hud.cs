@@ -1,5 +1,3 @@
-using Sandbox.UI;
-
 namespace Equivalent.UI;
 
 public partial class EquivalentHud : HudEntity<RootPanel> {

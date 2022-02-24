@@ -16,7 +16,7 @@ partial class EquivalentPlayer : Sandbox.Player {
 
 		Controller = new WalkController();
 		Animator = new StandardPlayerAnimator();
-		Camera = new FirstPersonCamera();
+		CameraMode = new FirstPersonCamera();
 
 		EnableAllCollisions = true;
 		EnableDrawing = true;
@@ -26,7 +26,7 @@ partial class EquivalentPlayer : Sandbox.Player {
 		LifeState = LifeState.Alive;
 		Health = MaxHealth;
 		Velocity = Vector3.Zero;
-		WaterLevel.Clear();
+		WaterLevel = 0f;
 
 		CreateHull();
 
