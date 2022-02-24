@@ -24,5 +24,4 @@ omnisharp.json
 *.zip
 *.vpk
 *.vpcf_c
-*.fgd
 *.vpost_c
