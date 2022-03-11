@@ -5,8 +5,11 @@
   "Ident": "equivalent",
   "Schema": 1,
   "HasAssets": true,
-  "AssetsPath": "materials/ui/*",
-  "ResourcePaths": null,
+  "AssetsPath": "",
+  "ResourcePaths": [
+    "fonts/*",
+    "materials/ui/*"
+  ],
   "HasCode": true,
   "CodePath": "code",
   "RootNamespace": "Sandbox"
