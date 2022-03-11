@@ -15,15 +15,18 @@ using Equivalent.UI;
 
 namespace Equivalent;
 
-public partial class EquivalentGame : Game {
-	public EquivalentGame() {
-		Log.Debug("Game created");
-		if(IsServer)
+public partial class EquivalentGame : Game
+{
+	public EquivalentGame()
+	{
+		Log.Debug( "Game created" );
+		if ( IsServer )
 			_ = new EquivalentHud();
 	}
 
-	public override void ClientJoined(Client client) {
-		base.ClientJoined(client);
+	public override void ClientJoined( Client client )
+	{
+		base.ClientJoined( client );
 
 		var player = new EquivalentPlayer();
 		client.Pawn = player;
@@ -31,8 +34,9 @@ public partial class EquivalentGame : Game {
 		player.InitialRespawn();
 	}
 
-	public override void DoPlayerSuicide(Client cl) {
-		if(cl.Pawn == null) return;
+	public override void DoPlayerSuicide( Client cl )
+	{
+		if ( cl.Pawn == null ) return;
 
 		cl.Pawn.Kill();
 	}
