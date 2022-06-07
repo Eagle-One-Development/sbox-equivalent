@@ -9,6 +9,7 @@ global using System.Linq;
 // internal
 using Equivalent.Player;
 using Equivalent.UI;
+using Equivalent.Util;
 
 namespace Equivalent;
 

@@ -1,4 +1,4 @@
-namespace Equivalent;
+namespace Equivalent.Util;
 
 public static class EntityExtension
 {
